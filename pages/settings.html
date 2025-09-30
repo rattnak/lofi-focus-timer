@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <title>Settings - LoFi Focus Timer</title>
+
+    <!-- Materialize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      body {
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #2d2d3f 50%,
+          #3d2e4f 100%
+        );
+        min-height: 100vh;
+        color: #fef6fb;
+      }
+
+      nav {
+        background: rgba(26, 26, 46, 0.9);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-wrapper">
+        <a href="../index.html" class="brand-logo">LoFi Focus</a>
+        <ul id="nav-mobile" class="right">
+          <li>
+            <a href="about.html"><i class="material-icons">info</i></a>
+          </li>
+          <li>
+            <a href="settings.html"><i class="material-icons">settings</i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="center-align" style="margin: 40px 0">
+        <h1 class="pink-text text-lighten-2">Settings</h1>
+        <p class="grey-text text-lighten-1">Customize your focus experience</p>
+      </div>
+
+      <!-- Timer Settings -->
+      <div
+        class="card z-depth-2"
+        style="
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(10px);
+          border-radius: 15px;
+        "
+      >
+        <div class="card-content white-text">
+          <span class="card-title">Timer Settings</span>
+
+          <!-- Focus Duration -->
+          <div class="row valign-wrapper" style="margin-bottom: 20px">
+            <div class="col s7">
+              <h6>Focus Duration</h6>
+              <p class="grey-text">Length of focus sessions in minutes</p>
+            </div>
+            <div class="col s5 right-align">
+              <div class="input-field" style="margin-top: 0; margin-bottom: 0">
+                <input
+                  type="number"
+                  id="focus-duration"
+                  value="25"
+                  min="1"
+                  max="60"
+                  class="white-text center-align validate"
+                  style="width: 80px; display: inline-block"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Break Duration -->
+          <div class="row valign-wrapper" style="margin-bottom: 20px">
+            <div class="col s7">
+              <h6>Break Duration</h6>
+              <p class="grey-text">Length of break sessions in minutes</p>
+            </div>
+            <div class="col s5 right-align">
+              <div class="input-field" style="margin-top: 0; margin-bottom: 0">
+                <input
+                  type="number"
+                  id="break-duration"
+                  value="5"
+                  min="1"
+                  max="30"
+                  class="white-text center-align validate"
+                  style="width: 80px; display: inline-block"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="divider"
+            style="background: rgba(255, 255, 255, 0.1)"
+          ></div>
+
+          <div class="row valign-wrapper">
+            <div class="col s8">
+              <h6>Auto-start Breaks</h6>
+              <p class="grey-text">
+                Automatically start break timer after focus session
+              </p>
+            </div>
+            <div class="col s4 right-align">
+              <div class="switch">
+                <label>
+                  <input type="checkbox" id="auto-start-breaks" checked />
+                  <span class="lever"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notification Settings -->
+      <div
+        class="card z-depth-2"
+        style="
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(10px);
+          border-radius: 15px;
+        "
+      >
+        <div class="card-content white-text">
+          <span class="card-title">Notifications</span>
+
+          <div class="row valign-wrapper">
+            <div class="col s8">
+              <h6>Sound Notifications</h6>
+              <p class="grey-text">Play sound when timer completes</p>
+            </div>
+            <div class="col s4 right-align">
+              <div class="switch">
+                <label>
+                  <input type="checkbox" id="sound-notifications" checked />
+                  <span class="lever"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="divider"
+            style="background: rgba(255, 255, 255, 0.1)"
+          ></div>
+
+          <div class="row valign-wrapper">
+            <div class="col s8">
+              <h6>Desktop Notifications</h6>
+              <p class="grey-text">
+                Show desktop notifications when timer ends
+              </p>
+            </div>
+            <div class="col s4 right-align">
+              <div class="switch">
+                <label>
+                  <input type="checkbox" id="desktop-notifications" />
+                  <span class="lever"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Management -->
+      <div
+        class="card z-depth-2"
+        style="
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(10px);
+          border-radius: 15px;
+        "
+      >
+        <div class="card-content white-text">
+          <span class="card-title">Data Management</span>
+
+          <div class="row">
+            <div class="col s12">
+              <h6>Reset Statistics</h6>
+              <p class="grey-text">Clear all session and task data</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6">
+              <button
+                class="btn waves-effect waves-light red darken-2 btn-large"
+                id="btn-reset-data"
+                style="width: 100%; border-radius: 10px"
+              >
+                <i class="material-icons left">delete_sweep</i>
+                Reset Data
+              </button>
+            </div>
+            <div class="col s12 m6">
+              <button
+                class="btn waves-effect waves-light pink lighten-2 btn-large"
+                id="btn-save-settings"
+                style="width: 100%; border-radius: 10px"
+              >
+                <i class="material-icons left">save</i>
+                Save Settings
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      // Load settings on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        loadSettings();
+
+        // Save settings button
+        document
+          .getElementById("btn-save-settings")
+          .addEventListener("click", saveSettings);
+
+        // Reset data button
+        document
+          .getElementById("btn-reset-data")
+          .addEventListener("click", resetData);
+      });
+
+      function loadSettings() {
+        // This is a prototype - settings would be loaded from storage in production
+        console.log("Settings loaded");
+      }
+
+      function saveSettings() {
+        const focusDuration = document.getElementById("focus-duration").value;
+        const breakDuration = document.getElementById("break-duration").value;
+        const autoStartBreaks =
+          document.getElementById("auto-start-breaks").checked;
+        const soundNotifications = document.getElementById(
+          "sound-notifications"
+        ).checked;
+        const desktopNotifications = document.getElementById(
+          "desktop-notifications"
+        ).checked;
+
+        // In production, these would be saved to storage
+        console.log("Settings saved:", {
+          focusDuration,
+          breakDuration,
+          autoStartBreaks,
+          soundNotifications,
+          desktopNotifications,
+        });
+
+        M.toast({ html: "✓ Settings saved successfully!", classes: "rounded" });
+      }
+
+      function resetData() {
+        if (
+          confirm(
+            "Are you sure you want to reset all data? This action cannot be undone."
+          )
+        ) {
+          // In production, this would clear all stored data
+          console.log("Data reset");
+          M.toast({ html: "All data has been reset", classes: "rounded" });
+        }
+      }
+      let deferredPrompt;
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        console.log("Install prompt is ready");
+
+        // Show your own install button or trigger immediately
+        if (confirm("Install LoFi Focus Timer as an app?")) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            console.log(choiceResult.outcome);
+            deferredPrompt = null;
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

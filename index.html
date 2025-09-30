@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="A minimalistic Pomodoro timer for focused work sessions">
+    <title>LoFi Focus Timer</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo">LoFi Focus</a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="pages/about.html"><i class="material-icons">info</i></a></li>
+                <li><a href="pages/settings.html"><i class="material-icons">settings</i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- Timer Section -->
+        <div class="timer-container">
+            <div class="circle-timer">
+                <svg width="280" height="280" viewBox="0 0 280 280">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#c75fef;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="breakGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#44a3a0;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="circle-bg" cx="140" cy="140" r="130"></circle>
+                    <circle class="circle-progress" cx="140" cy="140" r="130" 
+                            stroke-dasharray="817" 
+                            stroke-dashoffset="0"
+                            id="progress-circle"></circle>
+                </svg>
+                <div class="timer-display">
+                    <div class="timer-text" id="timer-display">25:00</div>
+                    <div class="timer-label" id="timer-label">Focus Time</div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <a class="btn-floating btn-large waves-effect waves-light" id="btn-start">
+                    <i class="material-icons" id="play-icon">play_arrow</i>
+                </a>
+                <a class="btn-floating btn-large waves-effect waves-light" id="btn-reset">
+                    <i class="material-icons">refresh</i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Statistics -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value" id="sessions-today">0</div>
+                <div class="stat-label">Sessions Today</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="tasks-completed">0</div>
+                <div class="stat-label">Tasks Done</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="focus-time">0h</div>
+                <div class="stat-label">Focus Time</div>
+            </div>
+        </div>
+        
+        <!-- Task Section -->
+        <div class="task-section">
+            <h5 class="section-title">Today's Tasks</h5>
+            
+            <div class="task-input-container">
+                <input type="text" class="task-input" id="task-input" placeholder="What do you want to focus on?">
+                <button class="btn waves-effect waves-light btn-add-task" id="btn-add-task">
+                    <i class="material-icons left">add</i>
+                    Add Task
+                </button>
+            </div>
+            
+            <ul class="task-list" id="task-list">
+                <!-- Tasks will be added here dynamically -->
+            </ul>
+            
+            <div class="empty-state" id="empty-state">
+                <i class="material-icons">inbox</i>
+                <p>No tasks yet. Add one to get started!</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/ui.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('serviceWorker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed'));
+            });
+        }
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        console.log('Install prompt is ready');
+        
+        // Show your own install button or trigger immediately
+        if (confirm('Install LoFi Focus Timer as an app?')) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+            console.log(choiceResult.outcome);
+            deferredPrompt = null;
+            });
+        }
+        });
+    </script>
+</body>
+</html>
