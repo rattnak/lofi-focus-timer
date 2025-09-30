@@ -1,43 +1,18 @@
-# 🎵 Lo-Fi Focus Timer - Progressive Web App
+# LoFi Focus Timer
 
-A beautiful and functional Pomodoro timer with ambient soundscapes, task tracking, and progress statistics. Built as a Progressive Web App (PWA) using Materialize CSS framework.
+A minimalistic Pomodoro timer Progressive Web App (PWA) designed for focused work sessions with a beautiful, distraction-free interface.
 
-![Lo-Fi Focus Timer](https://img.shields.io/badge/PWA-Ready-brightgreen) ![Materialize](https://img.shields.io/badge/Framework-Materialize-red) ![HTML5](https://img.shields.io/badge/HTML-5-orange) ![CSS3](https://img.shields.io/badge/CSS-3-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+## Features
 
-## ✨ Features
+- **Pomodoro Timer**: 25-minute focus sessions with 5-minute breaks
+- **Task Management**: Track and complete daily tasks
+- **Session Statistics**: Monitor sessions completed, tasks done, and total focus time
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **Progressive Web App**: Install and use offline on any device
+- **Customizable Settings**: Adjust focus/break durations and notification preferences
+- **Modern UI**: Gradient animations and glassmorphism effects
 
-- ⏱️ **Pomodoro Timer**: Customizable focus (25min), short break (5min), and long break (15min) intervals
-- 🎧 **Ambient Soundscapes**: 6 different sound options (Rain, Café, Nature, Ocean, Fireplace, White Noise)
-- ✅ **Task Management**: Add, complete, and delete daily tasks
-- 📊 **Progress Tracking**: Session counter, day streak, and tasks completed statistics
-- 📱 **Fully Responsive**: Works seamlessly on desktop, tablet, and mobile devices
-- 🔄 **Offline Support**: Functions offline as a Progressive Web App
-- 💾 **Local Storage**: Saves your progress and tasks automatically
-- 🎨 **Beautiful UI**: Modern gradient design with smooth animations
-
-## 🚀 Live Demo
-
-[View Live Demo](#) *(Add your GitHub Pages link here)*
-
-## 📸 Screenshots
-
-### Desktop View
-![Desktop Screenshot](images/screenshot1.png)
-
-### Mobile View
-![Mobile Screenshot](images/screenshot2.png)
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup structure
-- **CSS3**: Custom styling with animations
-- **Materialize CSS**: UI framework for responsive design
-- **JavaScript (ES6)**: Interactive functionality and timer logic
-- **Service Workers**: Offline functionality and caching
-- **Web App Manifest**: PWA installation support
-- **LocalStorage API**: Data persistence
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 lofi-focus-timer/
@@ -55,155 +30,109 @@ lofi-focus-timer/
 ├── pages/
 │   ├── about.html          # About page
 │   └── settings.html       # Settings page
-├── images/
-│   ├── icon-192.png        # PWA icon (192x192)
-│   ├── icon-512.png        # PWA icon (512x512)
-│   └── screenshots/        # Application screenshots
 └── README.md               # Project documentation
 ```
 
-## 🔧 Installation & Setup
+## Installation
 
-### Option 1: Download and Run Locally
+### Local Development
 
-1. **Clone or download this repository**
-   ```bash
-   git clone https://github.com/rattnak/lofi-focus-timer.git
-   cd lofi-focus-timer
-   ```
+1. Clone or download this repository
+2. Start a local server in the project directory:
 
-2. **Download Materialize CSS and JS**
-   - Visit [Materialize CSS](https://materializecss.com/getting-started.html)
-   - Download the latest version
-   - Extract `materialize.css`, `materialize.min.css` to `css/` folder
-   - Extract `materialize.js`, `materialize.min.js` to `js/` folder
+**Using Python:**
+```bash
+# Python 3
+python -m http.server 8000
 
-3. **Open in Browser**
-   - Simply open `index.html` in your web browser
-   - Or use a local server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js (http-server)
-   npx http-server
-   ```
+# Python 2
+python -m SimpleHTTPServer 8000
+```
 
-4. **Access the app**
-   - Navigate to `http://localhost:8000`
+**Using Node.js:**
+```bash
+npx http-server
+```
 
-### Option 2: Deploy to GitHub Pages
+**Using VS Code:**
+- Install the "Live Server" extension
+- Right-click `index.html` and select "Open with Live Server"
 
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-
-2. **Enable GitHub Pages**
-   - Go to repository Settings
-   - Navigate to Pages section
-   - Select `main` branch as source
-   - Click Save
-
-3. **Access your live site**
-   - Visit `https://rattnak.github.io/lofi-focus-timer/`
-
-## 💡 How to Use
-
-1. **Choose Your Mode**: Select between Focus Time (25min), Short Break (5min), or Long Break (15min)
-2. **Select Soundscape**: Click on any ambient sound card to activate background audio
-3. **Add Tasks**: Type your tasks in the input field and click Add or press Enter
-4. **Start Timer**: Click the play button to begin your focus session
-5. **Complete Tasks**: Check off tasks as you complete them
-6. **Track Progress**: View your session count, streak, and completed tasks in the statistics section
-
-## 🎯 PWA Features
-
-This app includes Progressive Web App functionality:
-
-- **Installable**: Can be installed on your device like a native app
-- **Offline Access**: Works without internet connection after first visit
-- **Fast Loading**: Cached resources for quick load times
-- **Responsive**: Adapts to any screen size
-- **App-like Experience**: Full-screen mode without browser chrome
+3. Open your browser and navigate to `http://localhost:8000`
 
 ### Installing as PWA
 
-**On Desktop (Chrome/Edge)**:
-1. Click the install icon in the address bar
-2. Click "Install"
+Once the app is running on a local server or deployed:
 
-**On Mobile (Chrome/Safari)**:
-1. Tap the menu button (⋮ or share icon)
-2. Select "Add to Home Screen"
-3. Tap "Add"
+**Desktop (Chrome/Edge):**
+- Look for the install icon in the address bar
+- OR click the three-dot menu → "Install LoFi Focus Timer"
 
-## 📝 Customization
+**Mobile:**
+- Tap the menu (three dots)
+- Select "Add to Home Screen" or "Install app"
 
-### Changing Timer Durations
+## Technologies Used
 
-Edit the duration values in `index.html`:
-```html
-<button class="mode-btn active" data-mode="work" data-duration="25">Focus (25m)</button>
-```
+- **HTML5**: Semantic markup and structure
+- **CSS3**: Custom styling with CSS Grid, Flexbox, and animations
+- **JavaScript (ES6+)**: Application logic and PWA functionality
+- **Materialize CSS**: UI framework for responsive design
+- **Service Workers**: Offline functionality and caching
+- **Web App Manifest**: PWA configuration
 
-### Modifying Colors
+## Usage
 
-Update the gradient colors in `css/style.css`:
-```css
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-```
+### Timer Controls
 
-### Adding New Soundscapes
+1. **Start/Pause**: Click the play button to start or pause the timer
+2. **Reset**: Click the refresh button to reset the current session
+3. **Auto-transitions**: Timer automatically switches between focus and break sessions
 
-Add new sound cards in `index.html`:
-```html
-<div class="sound-card" data-sound="your-sound">
-    <i class="material-icons">icon_name</i>
-    <div>Sound Name</div>
-</div>
-```
+### Task Management
 
-## 🔒 Privacy
+1. Enter a task in the input field
+2. Click "Add Task" or press Enter
+3. Mark tasks as complete or delete them
+4. Track completed tasks in the statistics
 
-This app:
-- Stores data locally on your device only
-- Does not collect or transmit any personal information
-- Does not require an account or login
-- Does not use cookies or trackers
+### Settings
 
-## 🐛 Known Issues
+Access the settings page to customize:
+- Focus session duration (1-60 minutes)
+- Break duration (1-30 minutes)
+- Auto-start breaks toggle
+- Sound and desktop notifications
+- Reset all data
 
-- Sound playback is simulated (no actual audio files included)
-- Statistics reset when browser data is cleared
-- Some browsers may limit service worker functionality
+## Browser Support
 
-## 🚀 Future Enhancements
+- Chrome/Edge 80+
+- Firefox 75+
+- Safari 13+
+- Opera 67+
 
-- [ ] Actual ambient sound files
-- [ ] Custom timer durations
-- [ ] Data export/import functionality
-- [ ] Multiple theme options
-- [ ] Notification sounds
-- [ ] Weekly/monthly statistics
-- [ ] Cloud sync (optional)
+**Note**: PWA features require HTTPS (or localhost for development)
 
-## 📄 License
+## Offline Support
 
-This project is open source and available under the [MIT License](LICENSE).
+The app includes a service worker that caches all necessary files for offline use. Once installed, you can use the timer without an internet connection.
 
-## 👤 Author
+## Future Enhancements
 
-**Your Name**
-- GitHub: [@rattnak](https://github.com/rattnak)
-- Email: your.email@example.com
+- Long break sessions (after 4 pomodoros)
+- Custom timer sounds
+- Task categories and priorities
+- Weekly/monthly statistics
+- Data export functionality
+- Theme customization
 
-## 🙏 Acknowledgments
+## License
 
-- [Materialize CSS](https://materializecss.com/) - UI Framework
-- [Material Icons](https://fonts.google.com/icons) - Icon library
-- [Francesco Cirillo](https://francescocirillo.com/pages/pomodoro-technique) - Creator of the Pomodoro Technique
+This project is open source and available under the MIT License.
 
+## Acknowledgments
 
+- Built with [Materialize CSS](https://materializecss.com/)
+- Icons from [Google Material Icons](https://fonts.google.com/icons)
+- Inspired by the Pomodoro Technique by Francesco Cirillo
