@@ -263,22 +263,22 @@
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
     >
-              let deferredPrompt;
+    //   let deferredPrompt;
 
-      window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        console.log('Install prompt is ready');
+    //   window.addEventListener('beforeinstallprompt', (e) => {
+    //     e.preventDefault();
+    //     deferredPrompt = e;
+    //     console.log('Install prompt is ready');
 
-        // Show your own install button or trigger immediately
-        if (confirm('Install LoFi Focus Timer as an app?')) {
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then((choiceResult) => {
-            console.log(choiceResult.outcome);
-            deferredPrompt = null;
-          });
-        }
-      });
+    //     // Show your own install button or trigger immediately
+    //     if (confirm('Install LoFi Focus Timer as an app?')) {
+    //       deferredPrompt.prompt();
+    //       deferredPrompt.userChoice.then((choiceResult) => {
+    //         console.log(choiceResult.outcome);
+    //         deferredPrompt = null;
+    //       });
+    //     }
+    //   });
     </script>
   </body>
 </html>
