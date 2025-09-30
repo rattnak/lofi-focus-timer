@@ -136,7 +136,3 @@ This project is open source and available under the MIT License.
 - Built with [Materialize CSS](https://materializecss.com/)
 - Icons from [Google Material Icons](https://fonts.google.com/icons)
 - Inspired by the Pomodoro Technique by Francesco Cirillo
-
----
-
-**Made with focus and flow**
