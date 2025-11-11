@@ -5,18 +5,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getAuth, signInAnonymously, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 import { getFirestore, enableIndexedDbPersistence } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyD8w1s9e0Svs6kptq-QM9XJuWbGQot5fbI",
-  authDomain: "lofi-focus-timer-c18fd.firebaseapp.com",
-  projectId: "lofi-focus-timer-c18fd",
-  storageBucket: "lofi-focus-timer-c18fd.firebasestorage.app",
-  messagingSenderId: "942700325095",
-  appId: "1:942700325095:web:0af8418613a86b6dac1a42",
-  measurementId: "G-9N0R7F475Q"
-};
+import { firebaseConfig } from './firebase-credentials.js';
 
 // Initialize Firebase
 let app;
