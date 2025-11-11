@@ -1,19 +1,27 @@
 // ==========================================
 // LoFi Focus Timer - Service Worker
+// Updated to support Firebase and IndexedDB
 // ==========================================
 
-const CACHE_NAME = 'lofi-focus-v1';
+const CACHE_NAME = 'lofi-focus-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/css/style.css',
   '/js/ui.js',
+  '/js/firebase-config.js',
+  '/js/firebase-operations.js',
+  '/js/indexeddb-helper.js',
+  '/js/sync-manager.js',
   '/pages/about.html',
   '/pages/settings.html',
   '/manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css',
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js',
-  'https://fonts.googleapis.com/icon?family=Material+Icons'
+  'https://fonts.googleapis.com/icon?family=Material+Icons',
+  'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js',
+  'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js',
+  'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js'
 ];
 
 // Install Service Worker
