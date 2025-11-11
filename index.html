@@ -24,6 +24,7 @@
         <div class="nav-wrapper">
             <a href="index.html" class="brand-logo">LoFi Focus</a>
             <ul id="nav-mobile" class="right">
+                <li><span id="online-status" class="online-indicator" title="Checking connection..."></span></li>
                 <li><a href="pages/about.html"><i class="material-icons">info</i></a></li>
                 <li><a href="pages/settings.html"><i class="material-icons">settings</i></a></li>
             </ul>
@@ -107,35 +108,30 @@
     
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="js/ui.js"></script>
-    
+
+    <!-- Custom JS with ES6 Modules -->
+    <script type="module" src="js/ui.js"></script>
+
     <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('serviceWorker.js')
-                    .then(reg => console.log('Service Worker registered'))
-                    .catch(err => console.log('Service Worker registration failed'));
+                    .then(reg => console.log('Service Worker: Registered successfully'))
+                    .catch(err => console.error('Service Worker: Registration failed', err));
             });
         }
-        // let deferredPrompt;
 
-        // window.addEventListener('beforeinstallprompt', (e) => {
-        // e.preventDefault();
-        // deferredPrompt = e;
-        // console.log('Install prompt is ready');
-        
-        // // Show your own install button or trigger immediately
-        // if (confirm('Install LoFi Focus Timer as an app?')) {
-        //     deferredPrompt.prompt();
-        //     deferredPrompt.userChoice.then((choiceResult) => {
-        //     console.log(choiceResult.outcome);
-        //     deferredPrompt = null;
-        //     });
-        // }
-        // });
+        // Optional: PWA Install Prompt Handler
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            console.log('PWA: Install prompt is ready');
+
+            // Optionally show your own install button here
+            // For now, browser will show its own install prompt when appropriate
+        });
     </script>
 </body>
 </html>
