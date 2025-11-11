@@ -1,5 +1,6 @@
 # Firebase Configuration
 .env
+js/firebase-credentials.js
 
 # IDE
 .vscode/
